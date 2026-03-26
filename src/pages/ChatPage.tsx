@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { useChatStore } from '../../store/chatStore';
+import { useChatStore } from '../store/chatStore';
 
-const AppLayout = () => {
+const ChatPage = () => {
   const selectedRoomId = useChatStore((state) => state.selectedRoomId);
   const hasSelectedRoom = selectedRoomId !== null;
 
@@ -17,7 +17,7 @@ const AppLayout = () => {
   );
 };
 
-export default AppLayout;
+export default ChatPage;
 
 const Container = styled.div`
   display: flex;
