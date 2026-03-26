@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import type { ChatRoom } from '../../types/chat';
 import { formatRoomTime } from '../../utils/time';
+import { text } from '../../styles/typography';
 
 type RoomItemProps = {
   room: ChatRoom;
@@ -55,16 +56,12 @@ const TopRow = styled.div`
 `;
 
 const RoomName = styled.span`
-  font-size: ${({ theme }) => theme.fontSize.md};
-  font-weight: 600;
+  ${text({ size: 'md', weight: 'semibold', ellipsis: true })}
   color: ${({ theme }) => theme.colors.fg.primary};
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `;
 
 const LastMessageTime = styled.span`
-  font-size: ${({ theme }) => theme.fontSize.xs};
+  ${text({ size: 'xs' })}
   color: ${({ theme }) => theme.colors.fg.tertiary};
   flex-shrink: 0;
   margin-left: ${({ theme }) => theme.spacing.sm};
@@ -77,22 +74,18 @@ const BottomRow = styled.div`
 `;
 
 const LastMessage = styled.span`
-  font-size: ${({ theme }) => theme.fontSize.sm};
+  ${text({ size: 'sm', ellipsis: true })}
   color: ${({ theme }) => theme.colors.fg.secondary};
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   flex: 1 1 0;
 `;
 
 const UnreadBadge = styled.span`
+  ${text({ size: 'xs', weight: 'semibold' })}
   min-width: 1.25rem;
   height: 1.25rem;
   border-radius: ${({ theme }) => theme.borderRadius.full};
   background-color: ${({ theme }) => theme.colors.accent.primary};
   color: ${({ theme }) => theme.colors.accent.fg};
-  font-size: ${({ theme }) => theme.fontSize.xs};
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;

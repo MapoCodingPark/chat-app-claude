@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useChatStore } from '../../store/chatStore';
 import RoomItem from './RoomItem';
+import { text } from '../../styles/typography';
 
 const RoomList = () => {
   const rooms = useChatStore((state) => state.rooms);
@@ -34,9 +35,8 @@ const Container = styled.div`
 `;
 
 const Header = styled.h2`
+  ${text({ size: 'xl', weight: 'bold' })}
   padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.md};
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  font-weight: 700;
   color: ${({ theme }) => theme.colors.fg.primary};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border.primary};
 `;

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useChatStore } from '../store/chatStore';
 import RoomList from '../features/room/RoomList';
+import MessageList from '../features/chat/MessageList';
 
 const ChatPage = () => {
   const selectedRoomId = useChatStore((state) => state.selectedRoomId);
@@ -12,7 +13,7 @@ const ChatPage = () => {
         <RoomList />
       </LeftPanel>
       <RightPanel $isHidden={!hasSelectedRoom}>
-        {hasSelectedRoom ? <div>Message List</div> : <EmptyState>채팅방을 선택해주세요</EmptyState>}
+        {hasSelectedRoom ? <MessageList /> : <EmptyState>채팅방을 선택해주세요</EmptyState>}
       </RightPanel>
     </Container>
   );

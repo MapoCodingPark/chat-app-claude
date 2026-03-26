@@ -36,6 +36,12 @@ export const theme = {
     lg: '1.125rem',
     xl: '1.25rem',
   },
+  fontWeight: {
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+  },
   borderRadius: {
     sm: '0.25rem',
     md: '0.5rem',
