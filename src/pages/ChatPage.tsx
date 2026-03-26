@@ -26,7 +26,7 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const LeftPanel = styled.div<{ $isHidden: boolean }>`
+const LeftPanel = styled.nav<{ $isHidden: boolean }>`
   width: 20rem;
   border-right: 1px solid ${({ theme }) => theme.colors.border.primary};
   flex-shrink: 0;
@@ -38,7 +38,7 @@ const LeftPanel = styled.div<{ $isHidden: boolean }>`
   }
 `;
 
-const RightPanel = styled.div<{ $isHidden: boolean }>`
+const RightPanel = styled.main<{ $isHidden: boolean }>`
   flex: 1 1 0;
   overflow: hidden;
 

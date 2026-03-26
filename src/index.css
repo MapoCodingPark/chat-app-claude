@@ -9,6 +9,10 @@ html {
   padding: 0;
 }
 
+ul, ol {
+  list-style: none;
+}
+
 body {
   font-family: system-ui, sans-serif;
 }

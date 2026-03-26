@@ -10,7 +10,7 @@ type RoomItemProps = {
 
 const RoomItem = ({ room, isSelected, onClick }: RoomItemProps) => {
   return (
-    <Container $isSelected={isSelected} onClick={onClick}>
+    <Container $isSelected={isSelected} role="option" aria-selected={isSelected} onClick={onClick}>
       <Info>
         <TopRow>
           <RoomName>{room.name}</RoomName>
@@ -29,7 +29,7 @@ const RoomItem = ({ room, isSelected, onClick }: RoomItemProps) => {
 
 export default RoomItem;
 
-const Container = styled.div<{ $isSelected: boolean }>`
+const Container = styled.li<{ $isSelected: boolean }>`
   display: flex;
   align-items: center;
   padding: ${({ theme }) => theme.spacing.md};

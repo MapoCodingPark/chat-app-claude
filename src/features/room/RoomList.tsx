@@ -10,7 +10,7 @@ const RoomList = () => {
   return (
     <Container>
       <Header>Chat</Header>
-      <List>
+      <List role="listbox">
         {rooms.map((room) => (
           <RoomItem
             key={room.id}
@@ -33,7 +33,7 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.primary};
 `;
 
-const Header = styled.div`
+const Header = styled.h2`
   padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.md};
   font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: 700;
@@ -41,7 +41,7 @@ const Header = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.border.primary};
 `;
 
-const List = styled.div`
+const List = styled.ul`
   flex: 1 1 0;
   overflow-y: auto;
 `;
