@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# Chat App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+실시간 채팅 웹 애플리케이션입니다.
+모바일(1-panel)과 데스크탑(2-panel)을 모두 지원하는 반응형으로 구현되어 있습니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 기술 스택
 
-## React Compiler
+| 분류 | 기술 |
+|------|------|
+| Framework | React 19 + TypeScript |
+| Build | Vite |
+| 상태 관리 | Zustand |
+| 스타일링 | Emotion |
+| 린팅/포맷팅 | ESLint + Prettier |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 주요 기능
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 채팅방 목록 조회 및 선택
+- 메시지 송수신
+- 읽지 않은 메시지 수 표시
+- 최근 메시지 기준 채팅방 정렬
+- 긴 메시지 말줄임 및 더 보기
+- 반응형 레이아웃 (모바일 / 데스크탑)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 시작하기
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# 패키지 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+
+# 빌드
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 프로젝트 구조
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── pages/
+│   └── ChatPage.tsx          # 메인 페이지 (레이아웃 포함)
+├── features/
+│   ├── room/                 # 채팅방 관련 컴포넌트
+│   │   ├── RoomList.tsx
+│   │   ├── RoomItem.tsx
+│   │   └── RoomSearch.tsx
+│   └── chat/                 # 메시지 관련 컴포넌트
+│       ├── MessageList.tsx
+│       ├── MessageItem.tsx
+│       ├── MessageInput.tsx
+│       └── NewMessageBanner.tsx
+├── store/
+│   └── chatStore.ts          # Zustand 전역 상태
+├── styles/
+│   ├── theme.ts              # 디자인 토큰
+│   ├── typography.ts         # 타이포그래피 유틸
+│   └── emotion.d.ts          # Emotion 테마 타입 선언
+├── mock/
+│   ├── data.ts               # Mock 데이터
+│   └── simulator.ts          # 메시지 수신 시뮬레이터
+├── types/
+│   └── chat.ts               # 타입 정의
+└── utils/
+    └── time.ts               # 시간 포맷 유틸
+```
+
+---
+
+## 컨벤션
+
+[CONVENTIONS.md](./CONVENTIONS.md) 참고
