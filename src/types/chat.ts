@@ -26,7 +26,7 @@ export type ChatRoom = {
 
 export type ChatState = {
   me: User;
-  users: Record<string, User>;          // userId → User (빠른 조회용)
+  users: Record<string, User>; // userId → User (빠른 조회용)
   rooms: ChatRoom[];
   messages: Record<string, Message[]>; // roomId → Message[]
   selectedRoomId: string | null;
