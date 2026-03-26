@@ -80,6 +80,25 @@ const userName = 'name';
 
 ---
 
+## 시맨틱 HTML
+
+- 의미에 맞는 HTML 태그를 적극 활용한다.
+- `div`, `span` 은 의미 없는 레이아웃 컨테이너에만 사용한다.
+
+| 상황 | 태그 |
+|------|------|
+| 채팅방 목록 사이드바 | `nav` |
+| 메인 콘텐츠 영역 | `main` |
+| 섹션 제목 | `h1` ~ `h6` |
+| 목록 | `ul` / `ol` |
+| 목록 아이템 | `li` |
+| 선택 가능한 목록 | `ul role="listbox"` |
+| 선택 가능한 목록 아이템 | `li role="option" aria-selected` |
+| 버튼 | `button` |
+| 텍스트 입력 | `textarea` / `input` |
+
+---
+
 ## 코드 스타일
 
 ### useState
@@ -132,6 +151,26 @@ onClick?.();
 
 // O
 const StyledDiv = styled.div``;
+```
+
+### Emotion styled props
+
+- 스타일에만 사용하는 prop은 `$` prefix를 붙인다.
+- `$` prefix props는 React가 유효한 HTML attribute로 인식하지 않아 DOM에 전달되지 않는다.
+- `shouldForwardProp`은 `$` 없이 일반 prop 이름을 스타일에만 쓸 때 사용한다.
+
+```tsx
+// O - $ prefix 사용 (권장)
+const Box = styled.div<{ $isSelected: boolean }>`
+  background: ${({ $isSelected }) => $isSelected ? 'blue' : 'white'};
+`;
+
+// shouldForwardProp 이 필요한 경우
+const Box = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'isSelected',
+})<{ isSelected: boolean }>`
+  background: ${({ isSelected }) => isSelected ? 'blue' : 'white'};
+`;
 ```
 
 ### 공통 컴포넌트 파일 구조

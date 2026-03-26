@@ -21,7 +21,7 @@ export const ROOMS: ChatRoom[] = [
     participantIds: ['user-me', 'user-1'],
     lastMessage: {
       text: '내일 몇 시에 만날까요?',
-      createdAt: '2026-03-25T10:30:00.000Z',
+      createdAt: '2026-03-26T10:30:00.000Z',
       senderId: 'user-1',
     },
     unreadCount: 2,
@@ -43,7 +43,7 @@ export const ROOMS: ChatRoom[] = [
     participantIds: ['user-me', 'user-3', 'user-4', 'user-5'],
     lastMessage: {
       text: '배포 완료했습니다 🎉',
-      createdAt: '2026-03-25T08:00:00.000Z',
+      createdAt: '2026-03-22T08:00:00.000Z',
       senderId: 'user-3',
     },
     unreadCount: 5,
@@ -54,7 +54,7 @@ export const ROOMS: ChatRoom[] = [
     participantIds: ['user-me', 'user-4'],
     lastMessage: {
       text: '감사합니다!',
-      createdAt: '2026-03-24T22:00:00.000Z',
+      createdAt: '2026-03-10T22:00:00.000Z',
       senderId: 'user-4',
     },
     unreadCount: 0,
@@ -83,12 +83,20 @@ export const MESSAGES: Record<string, Message[]> = {
       id: 'msg-1-3',
       roomId: 'room-1',
       senderId: 'user-1',
-      text: '내일 미팅 관련해서 여쭤봐도 될까요?',
+      text: '내일 미팅 관련해서 여쭤봐도 될까요? 안건이 좀 많아서 미리 공유드리고 싶었어요. 기획안 검토, 디자인 피드백, 개발 일정 조율까지 논의할 게 꽤 있을 것 같습니다. 시간을 넉넉히 잡는 게 좋을 것 같아요.',
       createdAt: '2026-03-25T10:20:00.000Z',
       status: 'sent',
     },
     {
       id: 'msg-1-4',
+      roomId: 'room-1',
+      senderId: 'user-me',
+      text: '네 좋아요! 저도 공유드릴 내용이 있어서 잘됐네요. 오전 10시 어떠세요? 회의실 예약해둘게요. 혹시 참석자 추가로 필요한 분 있으면 알려주시면 초대 드릴게요.',
+      createdAt: '2026-03-25T10:25:00.000Z',
+      status: 'sent',
+    },
+    {
+      id: 'msg-1-5',
       roomId: 'room-1',
       senderId: 'user-1',
       text: '내일 몇 시에 만날까요?',
