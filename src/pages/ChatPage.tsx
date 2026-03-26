@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useChatStore } from '../store/chatStore';
+import RoomList from '../features/room/RoomList';
 
 const ChatPage = () => {
   const selectedRoomId = useChatStore((state) => state.selectedRoomId);
@@ -8,7 +9,7 @@ const ChatPage = () => {
   return (
     <Container>
       <LeftPanel $isHidden={hasSelectedRoom}>
-        <div>Room List</div>
+        <RoomList />
       </LeftPanel>
       <RightPanel $isHidden={!hasSelectedRoom}>
         {hasSelectedRoom ? <div>Message List</div> : <EmptyState>채팅방을 선택해주세요</EmptyState>}
@@ -38,7 +39,7 @@ const LeftPanel = styled.div<{ $isHidden: boolean }>`
 `;
 
 const RightPanel = styled.div<{ $isHidden: boolean }>`
-  flex: 1;
+  flex: 1 1 0;
   overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {

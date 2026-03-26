@@ -21,7 +21,7 @@ export const ROOMS: ChatRoom[] = [
     participantIds: ['user-me', 'user-1'],
     lastMessage: {
       text: '내일 몇 시에 만날까요?',
-      createdAt: '2026-03-25T10:30:00.000Z',
+      createdAt: '2026-03-26T10:30:00.000Z',
       senderId: 'user-1',
     },
     unreadCount: 2,
@@ -43,7 +43,7 @@ export const ROOMS: ChatRoom[] = [
     participantIds: ['user-me', 'user-3', 'user-4', 'user-5'],
     lastMessage: {
       text: '배포 완료했습니다 🎉',
-      createdAt: '2026-03-25T08:00:00.000Z',
+      createdAt: '2026-03-22T08:00:00.000Z',
       senderId: 'user-3',
     },
     unreadCount: 5,
@@ -54,7 +54,7 @@ export const ROOMS: ChatRoom[] = [
     participantIds: ['user-me', 'user-4'],
     lastMessage: {
       text: '감사합니다!',
-      createdAt: '2026-03-24T22:00:00.000Z',
+      createdAt: '2026-03-10T22:00:00.000Z',
       senderId: 'user-4',
     },
     unreadCount: 0,
